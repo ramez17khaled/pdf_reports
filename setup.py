@@ -17,7 +17,9 @@ except ImportError:
 
 from setuptools import setup, find_packages
 
-exec(open("pdf_reports/version.py").read())  # loads __version__
+version = {}
+with open("pdf_reports/version.py") as fp:
+    exec(fp.read(), version)
 
 setup(
     name="pdf_reports",
