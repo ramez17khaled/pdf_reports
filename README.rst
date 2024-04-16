@@ -6,13 +6,9 @@
     </p>
 
 
-PDF_Reports
-===========
-
 .. image:: https://github.com/Edinburgh-Genome-Foundry/pdf_reports/actions/workflows/build.yml/badge.svg
    :target: https://github.com/Edinburgh-Genome-Foundry/pdf_reports/actions/workflows/build.yml
    :alt: GitHub CI build status
-
 .. image:: https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/pdf_reports/badge.svg?branch=master
    :target: https://coveralls.io/github/Edinburgh-Genome-Foundry/pdf_reports?branch=master
 
@@ -177,9 +173,11 @@ Alternatively, you can unzip the sources in a folder and type:
 **Note:** the package depends on the WeasyPrint Python package. If there are any issues,
 see installation instructions in the `WeasyPrint documentation <https://doc.courtbouillon.org/weasyprint/stable/first_steps.html>`_.
 
-If you have an older GNU/Linux distribution (e.g. Ubuntu 18.04), then install an older WeasyPrint (<=52),
-as they don't have the latest Pango that is required by the latest WeasyPrint: ``pip install weasyprint==52``
+If Pango is not available in your conda environment (``which pango-view``), but otherwise it's installed, then install it with ``conda install anaconda::pango``
 
+
+PDF Reports has been tested on Ubuntu 22.04. If you have an older GNU/Linux distribution (e.g. Ubuntu 18.04) which
+doesn't have the latest Pango that is required by the latest WeasyPrint, then installing an older WeasyPrint (<=52) may help: ``pip install weasyprint==52``
 
 **Note: on some Debian systems** you may need to first install ``libffi-dev`` (``apt install libffi-dev``). The package name may be ``libffi-devel`` on some systems.
 

@@ -12,8 +12,7 @@ except (ImportError, OSError) as err:
     if "pango" in str(err):
         message += (
             "\nMaybe you haven't installed the Pango dependency? "
-            "('brew install pango' on Mac, 'apt install libpango' "
-            "on Ubuntu).\n"
+            "See PDF Reports install instructions in documentation.\n"
         )
     if "cairo" in str(err):
         message += "\nMaybe you haven't installed the Cairo dependency?\n"
