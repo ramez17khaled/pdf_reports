@@ -23,7 +23,7 @@ with open("pdf_reports/version.py") as fp:
 
 setup(
     name="pdf_reports",
-    version=__version__,
+    version=version["__version__"],
     author="Zulko",
     url="https://github.com/Edinburgh-Genome-Foundry/pdf_reports",
     description="Create nice-looking PDF reports from HTML content.",
