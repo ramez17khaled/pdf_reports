@@ -159,7 +159,7 @@ def figure_data(fig, size=None, fmt="png", bbox_inches="tight", **kwargs):
     **kwargs
       Any other option of Matplotlib's figure.savefig() method.
     """
-    if isinstance(fig, Axes):
+    if fig.__class__.__name__ == "Axes":
         fig = fig.figure
     output = BytesIO()
     original_size = fig.get_size_inches()
