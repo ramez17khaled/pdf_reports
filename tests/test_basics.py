@@ -5,7 +5,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 
 
 def test_pug_to_html():
