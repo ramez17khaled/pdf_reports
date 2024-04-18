@@ -5,14 +5,13 @@ inside the templates. Functions in this module are available from inside the
 templates under the domain name ``pdf_tools``. For instance
 ``pdf_tools.dataframe_to_html()``.
 """
+
 from bs4 import BeautifulSoup
 import base64
 import pandas
 from io import BytesIO
 import datetime
 import textwrap
-
-from matplotlib.axes import Axes
 
 
 def dataframe_to_html(
