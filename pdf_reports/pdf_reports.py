@@ -135,7 +135,10 @@ def write_report(
     weasy_html = HTML(string=html, base_url=base_url)
     if use_default_styling:
         extra_stylesheets = tuple(extra_stylesheets)
-        stylesheets = (get_semantic_ui_CSS(), STYLESHEET,) + extra_stylesheets
+        stylesheets = (
+            get_semantic_ui_CSS(),
+            STYLESHEET,
+        ) + extra_stylesheets
     else:
         stylesheets = extra_stylesheets
     if target in [None, "@memory"]:
