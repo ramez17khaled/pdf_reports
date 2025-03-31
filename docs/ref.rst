@@ -10,7 +10,7 @@ Core functions
    :members:
 
 Tools
-~~~~~~
+~~~~~
 
 .. automodule:: pdf_reports.tools
    :members:

@@ -12,3 +12,5 @@ from .tools import (
     figure_data,
     JupyterPDF,
 )
+
+from .version import __version__

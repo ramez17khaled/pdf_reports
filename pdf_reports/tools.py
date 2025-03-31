@@ -24,30 +24,25 @@ def dataframe_to_html(
 ):
     """Return a HTML version of a dataframe with Semantic UI CSS style classes.
 
-    By default it applies the following Semantic UI classes:
-    'ui', 'compact', 'celled', 'striped', 'table', 'groups'
+    By default, it applies the following Semantic UI classes:
+    'ui', 'compact', 'celled', 'striped', 'table', 'groups'.
 
     Parameters
     ----------
-
-    dataframe
-      The pandas dataframe to convert to PDF
-
-    extra_classes
-      Classes to add to the default, which are 'ui', 'compact', 'celled',
-      'striped', 'table', 'groups', selected to create nicely-formatted
-      Semantic UI tables. For instance 'definition' can be added to add
-      special emphasis on the first column. See Semantic UI documentation.
-
-    index
-      Whether to display the dataframe's index.
-
-    header
-      Whether to display the dataframe's headers.
-
-    escape_html
-      Whether the content of the dataframe should be html-escaped. Leave to
-      false if your dataframe contains images or any kind of HTML formatting.
+    dataframe : DataFrame
+        The pandas dataframe to convert to HTML.
+    extra_classes : list of str
+        Classes to add to the default, which are 'ui', 'compact', 'celled',
+        'striped', 'table', 'groups', selected to create nicely-formatted
+        Semantic UI tables. For instance, 'definition' can be added to add
+        special emphasis on the first column. See Semantic UI documentation.
+    index : bool
+        Whether to display the dataframe's index.
+    header : bool
+        Whether to display the dataframe's headers.
+    escape_html : bool
+        Whether the content of the dataframe should be html-escaped. Leave to
+        False if your dataframe contains images or any kind of HTML formatting.
     """
     default_classes = ()
     if use_default_classes:
@@ -74,14 +69,11 @@ def style_table_rows(table_html, tr_modifier):
 
     Parameters
     ----------
-
-    table_html
-      A string "<table>...</table>" of an HTML table.
-
-    tr_modifier
-      A function that takes a BeautifulSoup ``tr`` element as argument
-      and changes its attributes inplace. for instance with
-      ``tr.text = new_text``, or with the ``add_css_class`` method.
+    table_html : str
+        A string "<table>...</table>" of an HTML table.
+    tr_modifier : function
+        A function that takes a BeautifulSoup `tr` element as argument and changes its attributes inplace.
+        For instance, modifications can be made with `tr.text = new_text`, or with the `add_css_class` method.
     """
     soup = BeautifulSoup(table_html, "html.parser")
     for tr in soup.find_all("tr"):
@@ -133,30 +125,25 @@ def now(fmt="%Y-%m-%d %H:%M"):
 def figure_data(fig, size=None, fmt="png", bbox_inches="tight", **kwargs):
     """Return a HTML-embeddable string of the figure data.
 
-    The string can be embedded in an image tag as ``<img src="{DATA}"/>``.
+    The string can be embedded in an image tag as `<img src="{DATA}"/>`.
 
     Parameters
     ----------
-
-    fig
-      A Matplotlib figure. A Matplotlib "ax" can also be provided, at which
-      case the whole ``ax.figure`` will be displayed (i.e. all axes in the
-      same figure).
-
-    size
-      Size or resolution (width, height) of the final figure image, in inches.
-
-    fmt
-      Image format, for instance "png", "svg", "jpeg". SVG is vectorial (non
-      pixelated) but sometimes more difficult to work with inside HTML/PDF
-      documents.
-
-    bbox_inches
-      Keeping this option to "tight" will ensure that your plot's delimitation
-      is optimal.
-
+    fig : Matplotlib figure or axis
+        A Matplotlib figure. A Matplotlib "ax" can also be provided, at which
+        case the whole `ax.figure` will be displayed (i.e., all axes in the
+        same figure).
+    size : tuple
+        Size or resolution (width, height) of the final figure image, in inches.
+    fmt : str
+        Image format, for instance "png", "svg", "jpeg". SVG is vectorial (non
+        pixelated) but sometimes more difficult to work with inside HTML/PDF
+        documents.
+    bbox_inches : str
+        Keeping this option to "tight" will ensure that your plot's delimitation
+        is optimal.
     **kwargs
-      Any other option of Matplotlib's figure.savefig() method.
+        Any other option of Matplotlib's figure.savefig() method.
     """
     if fig.__class__.__name__ == "Axes":
         fig = fig.figure

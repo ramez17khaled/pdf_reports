@@ -74,17 +74,15 @@ def get_semantic_ui_CSS():
 def pug_to_html(path=None, string=None, **context):
     """Convert a Pug template, as file or string, to html.
 
-    path
-      Path to a .pug template file. The ``string`` parameter can be provided
-      instead.
-
-    string
-      A string of a Pug template. The ``filepath`` parameter can be provided
-      instead.
-
-    **variables
-      Keyword arguments indicating the variables to use in the Pug template
-      (if it contains variables). For instance ``title='My title'``.
+    Parameters
+    ----------
+    path : str, optional
+        Path to a .pug template file. The `string` parameter can be provided instead.
+    string : str, optional
+        A string of a Pug template. The `path` parameter can be provided instead.
+    **context :
+        Keyword arguments indicating the variables to use in the Pug template
+        (if it contains variables). For instance `title='My title'`.
     """
     default = {k: v for (k, v) in GLOBALS.items()}
     default.update(context)
@@ -114,23 +112,17 @@ def write_report(
 
     Parameters
     ----------
-    html
-      A HTML string.
-
-    target
-      A PDF file path or file-like object, or None for returning the raw bytes
-      of the PDF.
-
-    base_url
-      The base path from which relative paths in the HTML template start.
-
-    use_default_styling
-      Setting this parameter to False, your PDF will have no styling at all by
-      default. This means no Semantic UI, which can speed up the rendering.
-
-    extra_stylesheets
-      List of paths to other ".css" files used to define new styles or
-      overwrite default styles.
+    html : str
+        A HTML string.
+    target : str or file-like object, optional
+        A PDF file path or file-like object, or None for returning the raw bytes of the PDF.
+    base_url : str
+        The base path from which relative paths in the HTML template start.
+    use_default_styling : bool
+        Setting this parameter to False, your PDF will have no styling at all by default.
+        This means no Semantic UI, which can speed up the rendering.
+    extra_stylesheets : list of str
+        List of paths to other ".css" files used to define new styles or overwrite default styles.
     """
     weasy_html = HTML(string=html, base_url=base_url)
     if use_default_styling:
