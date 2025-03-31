@@ -40,16 +40,12 @@ Infos
 
   pip install pdf_reports
 
-**Web documentation:**
+**Web documentation:** `<https://edinburgh-genome-foundry.github.io/pdf_reports/>`_
 
-`<https://edinburgh-genome-foundry.github.io/pdf_reports/>`_
+**Github Page:** `<https://github.com/Edinburgh-Genome-Foundry/pdf_reports>`_
 
-**Github Page:**
+**Live demo:** `<http://cuba.genomefoundry.org/sculpt_a_sequence>`_
 
-`<https://github.com/Edinburgh-Genome-Foundry/pdf_reports>`_
+**License:** MIT
 
-**Live demo:**
-
-`<http://cuba.genomefoundry.org/sculpt_a_sequence>`_
-
-**License:** MIT, Copyright Edinburgh Genome Foundry
+Copyright 2018 Edinburgh Genome Foundry, University of Edinburgh

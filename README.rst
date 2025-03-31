@@ -188,4 +188,4 @@ License = MIT
 -------------
 
 This open-source software project was originally written at the `Edinburgh Genome Foundry <http://www.genomefoundry.org//>`_ by `Zulko <https://github.com/Zulko>`_
-and `released on Github <https://github.com/Edinburgh-Genome-Foundry/pdf_reports>`_ under the MIT licence (Copyright 2018 Edinburgh Genome Foundry). Everyone is welcome to contribute !
+and `released on Github <https://github.com/Edinburgh-Genome-Foundry/pdf_reports>`_ under the MIT licence (Copyright 2018 Edinburgh Genome Foundry, University of Edinburgh). Everyone is welcome to contribute !
