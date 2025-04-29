@@ -13,7 +13,7 @@ setup(
     long_description=open("pypi-readme.rst").read(),
     license="MIT",
     keywords="PDF report web jinja weasyprint",
-    packages=find_packages(exclude="docs"),
+    packages=find_packages(exclude=["docs","tests","examples"]),
     include_package_data=True,
     install_requires=[
         "pypugjs",
